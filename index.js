@@ -8,7 +8,20 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (a,b) => {
+    
+  let final = [];
+
+  if ( b === undefined) {
+      for (x =0; x < a.length; x++){
+          final.push(Date.parse(a[x]).toString().slice(0,-3));
+  }
+      return final.sort().join('-');}
+  else {
+      final.push(Date.parse(dates[b]).toString().slice(0,-3));
+      return final[0];
+  }
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
@@ -18,7 +31,7 @@ const createDate = null;
   console.log(createDate?.(dates));
 
   // '1614841200' (dalam string)
-  console.log(createDate?.(dates, 2));
+  console.log(createDate?.(dates, 3));
 })();
 
 module.exports = {
