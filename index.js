@@ -18,7 +18,7 @@ const createDate = (a,b) => {
   }
       return final.sort().join('-');}
   else {
-      final.push(Date.parse(dates[b]).toString().slice(0,-3));
+      final.push(Date.parse(a[b]).toString().slice(0,-3));
       return final[0];
   }
 };
